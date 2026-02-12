@@ -4,14 +4,9 @@ Dice rolling simulation that outputs special names for rolls
 02/12/2026""")
 
 import random
-print("Rolling the dice...")
 
 
-dice_roll = random.randint(1, 6)
-dice_roll_2 = random.randint(1, 6)
-print("You rolled a", dice_roll, "and a", dice_roll_2)
-
-# Outputting the rolls and print results
+# Defining the dice roll strings function, will print right string for roll
 def dice_roll_strings():
     if dice_roll + dice_roll_2 == 2:
         print("Snake Eyes")
@@ -41,8 +36,19 @@ def dice_roll_strings():
         print("Boxcars")
     else:
         print("No special name for this roll")
+
+# Rolling dice for the first time
+
+print("Rolling the dice...")
+dice_roll = random.randint(1, 6)
+dice_roll_2 = random.randint(1, 6)
+print("You rolled a", dice_roll, "and a", dice_roll_2)
+
+#Calling the function to print strings for correct rolls
 dice_roll_strings()
 
+
+#Setting up game for repeat players
 user_input: str = str(input("Would you like to play again? (yes/no): "))
 
 while user_input.lower() == "yes":
