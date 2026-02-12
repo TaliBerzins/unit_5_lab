@@ -12,32 +12,42 @@ dice_roll_2 = random.randint(1, 6)
 print("You rolled a", dice_roll, "and a", dice_roll_2)
 
 # Outputting the rolls and print results
+def dice_roll_strings():
+    if dice_roll + dice_roll_2 == 2:
+        print("Snake Eyes")
+    elif dice_roll + dice_roll_2 == 3:
+        print("Ace Caught a Deuce")
+    elif dice_roll ==2 and dice_roll_2 == 2:
+        print("Little Joe From Kokomo")
+    elif (dice_roll ==1 and dice_roll_2 == 4) or (dice_roll ==4 and dice_roll_2 == 1): 
+        print("Little Phoebe") 
+    elif (dice_roll ==2 and dice_roll_2 == 3) or (dice_roll ==3 and dice_roll_2 == 2):
+        print("Little Phoebe") 
+    elif dice_roll ==3 and dice_roll_2 == 3:
+        print(" Jimmy Hicks from the Sticks")
+    elif (dice_roll ==1 and dice_roll_2 == 6) or (dice_roll ==6 and dice_roll_2 == 1):
+        print("Six Ace")
+    elif (dice_roll ==4 and dice_roll_2 == 4):
+        print("Eight from Decatur")
+    elif (dice_roll ==3 and dice_roll_2 == 6) or (dice_roll ==6 and dice_roll_2 == 3):
+        print("Nina from Pasadena")
+    elif (dice_roll ==4 and dice_roll_2 == 5) or (dice_roll ==5 and dice_roll_2 == 4):
+        print("Nina from Pasadena")
+    elif (dice_roll ==5 and dice_roll_2 == 5):
+        print("Puppy Paws")
+    elif (dice_roll ==5 and dice_roll_2 == 6) or (dice_roll ==6 and dice_roll_2 == 5):
+        print("Six five no Jive")
+    elif (dice_roll ==6 and dice_roll_2 == 6):
+        print("Boxcars")
+    else:
+        print("No special name for this roll")
+dice_roll_strings()
 
-if dice_roll + dice_roll_2 == 2:
-    print("Snake Eyes")
-elif dice_roll + dice_roll_2 == 3:
-    print("Ace Caught a Deuce")
-elif dice_roll ==2 and dice_roll_2 == 2:
-    print("Little Joe From Kokomo")
-elif (dice_roll ==1 and dice_roll_2 == 4) or (dice_roll ==4 and dice_roll_2 == 1): 
-    print("Little Phoebe") 
-elif (dice_roll ==2 and dice_roll_2 == 3) or (dice_roll ==3 and dice_roll_2 == 2):
-    print("Little Phoebe") 
-elif dice_roll ==3 and dice_roll_2 == 3:
-    print(" Jimmy Hicks from the Sticks")
-elif (dice_roll ==1 and dice_roll_2 == 6) or (dice_roll ==6 and dice_roll_2 == 1):
-    print("Six Ace")
-elif (dice_roll ==4 and dice_roll_2 == 4):
-    print("Eight from Decatur")
-elif (dice_roll ==3 and dice_roll_2 == 6) or (dice_roll ==6 and dice_roll_2 == 3):
-    print("Nina from Pasadena")
-elif (dice_roll ==4 and dice_roll_2 == 5) or (dice_roll ==5 and dice_roll_2 == 4):
-    print("Nina from Pasadena")
-elif (dice_roll ==5 and dice_roll_2 == 5):
-    print("Puppy Paws")
-elif (dice_roll ==5 and dice_roll_2 == 6) or (dice_roll ==6 and dice_roll_2 == 5):
-    print("Six five no Jive")
-elif (dice_roll ==6 and dice_roll_2 == 6):
-    print("Boxcars")
-else:
-    print("No special name for this roll")
+user_input: str = str(input("Would you like to play again? (yes/no): "))
+
+while user_input.lower() == "yes":
+    dice_roll = random.randint(1, 6)
+    dice_roll_2 = random.randint(1, 6)
+    print("You rolled a", dice_roll, "and a", dice_roll_2)
+    dice_roll_strings()
+    user_input = str(input("Would you like to play again? (yes/no): "))
